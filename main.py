@@ -13,7 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By  
 
 # files
-from voiceBrowser.back_end_functions import compute_action, proccess_command
+from back_end_functions import compute_action, proccess_command
 
 
 #start web driver 
@@ -23,15 +23,13 @@ options.add_argument("--disable-popup-blocking")  # Disable popup blocking
 driver = webdriver.Chrome(options = options)
 driver.get("https://www.google.com")
 
-# declare 
+# declare models
 #valhalla/distilbart-mnli-12-3 
 #facebook/bart-large-mnli
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 click_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 actions = ["scroll up", "up", "scroll down", "down", "search", "search up", "look", "click", "click on", "open tab", "close tab", "next tab", "forward tab", "previous tab", "last tab", "pause video", "play video", "go back", "last page", "next page", "next", "refresh"]
-#actions = ["up",  "down", "search", "click", "open tab", "close tab", "next tab", "previous tab",  "pause", "play", "last page", "next page", "refresh"]
-#actions = ["up",  "down", "search", "click", "open", "close", "next tab", "last tab",  "pause", "play", "click", "last page", "next page"]
 
 classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=0)
 text_based_actions = ["search", "click", "other"]
