@@ -2,13 +2,13 @@
 
 ## Voice-Controlled Chrome Browser
 
-This project enables you to control your chrome browser with your voice. Using Python, Hugging Face Sentence-Transformers, Vosk, Selenium, and PyAudio, the application takes in your spoken commands and executes them on a chrome browser. It leverages NLP-driven command recognition to extract and execute user voice commands, using real-time speech-to-text conversion and web automation. More specifically, this project uses a zero-shot-classification trained on the facebook/bart-large-mnli model and paraphrase-MiniLM-L6-v2.
+This project enables you to control your chrome browser with your voice. Using Python, Hugging Face Sentence-Transformers, Vosk, Selenium, and PyAudio, the application takes in your spoken commands and executes them on a chrome browser. It leverages NLP-driven command recognition to extract and execute user voice commands, using real-time speech-to-text conversion and web automation. No command proccessing is hard coded so try to be creative with your commands. Enjoy!
 
 
 ## Features
 
 - **Natural Language Processing (NLP):** Implemented command recognition and target extraction using Hugging Face's Sentence-Transformers (models: `paraphrase-MiniLM-L6-v2`, `all-MiniLM-L6-v2`).
-- **Zero-Shot Classification:** Utilizes a zero-shot classification model to accurately recognize and execute user commands without predefined categories.
+- **Zero-Shot Classification:** Utilizes a zero-shot classification model to accurately recognize and execute user commands without predefined categories using the facebook/bart-large-mnli model
 - **Speech-to-Text Conversion:** Integrated **Vosk** and **PyAudio** to handle real-time voice commands and convert them to text.
 - **Browser Automation:** Uses **Selenium** to automate dynamic web commands, enabling voice-driven control over a Chrome browser.
 
