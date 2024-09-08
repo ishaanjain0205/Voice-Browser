@@ -19,7 +19,7 @@ def compute_action(input, actions, text_based_actions, model, classifier):
     print(labels[0] + " " + str(max_score))
     if max_score > 0.75:
         max_idx = scores.index(max_score)
-        print("Classifier executed")
+#        print("Classifier executed")
         print("Best matching intent: " + labels[max_idx])
         return labels[max_idx]
     else:
@@ -33,7 +33,7 @@ def compute_action(input, actions, text_based_actions, model, classifier):
 
         # find most similar command index
         closest_intent = similarities.argmax()
-        print("Model executed")
+#       print("Model executed")
         print(f"Best matching intent: {actions[closest_intent]}")
 
         return actions[closest_intent]
@@ -73,7 +73,7 @@ def search(recognizedText, driver):
         search_query = search_query.replace("search up", "").strip()
         search_query = search_query.replace("search", "").strip()
         search_query = search_query.replace("look up", "").strip()
-        print("RECOGINZED SEARCH AND STRIPPED")
+#        print("RECOGINZED SEARCH AND STRIPPED")
 
         if search_query == "":
             return
@@ -175,9 +175,9 @@ def click(input, driver, model, classifier, click_model):
         
         predicted_link = link_texts[closest_intent_idx]
         
-        for link in link_texts:
-            print(link)
-        print("Classifier executed")
+        #for link in link_texts:
+        #    print(link)
+#       print("Classifier executed")
         print("Best matching link: " + predicted_link)
         
         final_link = driver.find_element(By.LINK_TEXT, predicted_link)
