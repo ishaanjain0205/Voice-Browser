@@ -12,7 +12,7 @@ This project enables you to control your chrome browser with your voice. Using P
 - **Speech-to-Text Conversion:** Integrated **Vosk** and **PyAudio** to handle real-time voice commands and convert them to text.
 - **Browser Automation:** Uses **Selenium** to automate dynamic web commands, enabling voice-driven control over a Chrome browser.
 
-## Best Way to Operate
+## Best Way to Use
 It is a tool to control your browser just as your clicks would. You cannot say things such as open Netflix. 
 Try using commands like:
 - search up how to code or look up how to code
