@@ -8,7 +8,7 @@ This project enables you to control your chrome browser with your voice. Using P
 ## Features
 
 - **Natural Language Processing (NLP):** Implemented command recognition and target extraction using Hugging Face's Sentence-Transformers (models: `paraphrase-MiniLM-L6-v2`, `all-MiniLM-L6-v2`).
-- **Zero-Shot Classification:** Utilizes a zero-shot classification model to accurately recognize and execute user commands without predefined categories using the facebook/bart-large-mnli model
+- **Zero-Shot Classification:** Utilizes a zero-shot classification model to accurately recognize and execute user commands without predefined categories using `facebook/bart-large-mnli` model
 - **Speech-to-Text Conversion:** Integrated **Vosk** and **PyAudio** to handle real-time voice commands and convert them to text.
 - **Browser Automation:** Uses **Selenium** to automate dynamic web commands, enabling voice-driven control over a Chrome browser.
 
@@ -39,7 +39,7 @@ Follow the steps below to set up the project and install the necessary dependenc
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/voiceBrowser.git
+git clone https://github.com/ishaanjain0205/voiceBrowser.git
 cd voiceBrowser
 ```
 ### 2. Create a virtual enviornment
