@@ -1,4 +1,5 @@
-# integration.py
+# main.py
+
 from sentence_transformers import SentenceTransformer, util
 from transformers import pipeline
 
@@ -14,7 +15,6 @@ from selenium.webdriver.common.by import By
 
 # files
 from back_end_functions import compute_action, proccess_command
-
 
 #start web driver 
 options = webdriver.ChromeOptions()
@@ -67,7 +67,6 @@ while True:
             json_string = json.loads(recognizedText)
             recognizedText = json_string['text']
 
-            
             # output recognized
             print("RECOGNIZED: " + recognizedText)
 
@@ -78,16 +77,18 @@ while True:
                 driver.quit()
                 break
 
-            # calculating and 
+            # send to back end to calculate 
             if recognizedText != "":
+                # calculate action
                 command = compute_action(recognizedText, actions, text_based_actions, model, classifier)
                 print("CALCUALTED: " + command)
+                # execute aciton
                 proccess_command(command, recognizedText, driver, model, classifier, click_model)
             else:
                 command = "error"
                 print("NO AUDIO DETECTED")
 
-
+            # restart stream after calculations complete
             stream.start_stream()
 
             

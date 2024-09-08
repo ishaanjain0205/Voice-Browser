@@ -5,8 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By  
 from sentence_transformers import SentenceTransformer, util
 
-
-# takes in input, actions[], and classifier
+# compute general purpose of command
 def compute_action(input, actions, text_based_actions, model, classifier):
 
     # check for search and click first
@@ -17,6 +16,8 @@ def compute_action(input, actions, text_based_actions, model, classifier):
     labels = classifier_results["labels"]
     max_score = max(scores)
     print(labels[0] + " " + str(max_score))
+
+    # if score is high enough, execute click or search
     if max_score > 0.75:
         max_idx = scores.index(max_score)
 #        print("Classifier executed")
